@@ -1,0 +1,17 @@
+<form>
+    num1: <input type="text" name="num1" /> <br>
+    num2: <input type="text" name="num2" /> <br>
+    num3: <input type="text" name="num3" /> <br>
+    sum: <input type="text" name="sum" /> <br>
+    <input type="button" value="Sum" onclick="calcSum()" />
+</form>
+
+<script>
+    function calcSum() {
+        let num1 = document.getElementsByName('num1')[0].value;
+        let num2 = document.getElementsByName('num2')[0].value;
+        let num3 = document.getElementsByName('num3')[0].value;
+        let sum = Number(num1) + Number(num2) + Number(num3);
+        document.getElementsByName('sum')[0].value = sum;
+    }
+</script>
