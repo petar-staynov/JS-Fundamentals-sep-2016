@@ -4,3 +4,4 @@ function biggestNum(input) {
     let num3 = Number(input[2]);
     console.log(Math.max(num1, num2, num3));
 }
+biggestNum(['1', '2', '3']);
