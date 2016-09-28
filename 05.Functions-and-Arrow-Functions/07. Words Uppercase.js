@@ -1,13 +1,4 @@
-function aggregateelements(input) {
-    let elements = input.map(String);
-    textor(elements, 0, (x) => x.toUpperCase());
-
-    function textor(text) {
-        let val = initVal;
-        for (let i = 0; i < arr.length; i++)
-        {
-            val = func(val, arr[i]);
-        }
-        console.log(val);
-    }
+function uppercase([str]) {
+    let result = str.toUpperCase().split(/\W+/).filter(w => w!='').join(', ');
+    console.log(result);
 }
