@@ -6,4 +6,4 @@ function sumNumbers(input) {
     let sum = a + b + c;
     console.log(sum);
 }
-sumNumbers([1,2,3])
+sumNumbers([1,2,3]);
