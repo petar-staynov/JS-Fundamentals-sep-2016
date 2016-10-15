@@ -31,3 +31,10 @@ for (let row = 0; row < matrix.length; row++) {
 //Read, Splice, Trim spaces, Remove empty elements
 let elements = obj.splice('|').map(each => each.trim()).filter(each => each != '');
 
+////Regular Expression
+element.split(/regex/); //splits by regex
+let text="long text here"; let matched = text.match(/regex/); //matches text by pattern and returns all matches
+let text ="long text here"; let pattern = new RegExp(/expresion/); pattern.match(text);//matches text by patter and returns first match
+text.replace("string" or /pattern/ to replace, thing to be replaced with);
+text.indexOf("string" or /pattern/);//return array index of matched string or pattern
+
