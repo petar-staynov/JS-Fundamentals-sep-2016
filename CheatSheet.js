@@ -6,8 +6,14 @@ console.log(`object = ${objectValue}`);
 arr.join('element'); //element = some sign to use for joining
 arr.splice(x, y); //x - start index; y - end index (excluded)
 arr.split('|'); arr.split(/regular expression/); //splits by sign or by regex
-let regex
-console.log('');
+arr.pop(); let popped = arr.pop(); //removes last element and returns it
+arr.shift(); let shifter = arr.shift();//removes 0 element and returns it
+arr.unshift();//pushes new element to beginning of array and moves rest
+arr.push(<element>); //pushes element to end of array
+
+////regex
+let regex= /<insert regex here>/g;
+
 
 ////MATRICES
 //Matrix numbers mapper
