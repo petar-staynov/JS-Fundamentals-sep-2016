@@ -4,12 +4,15 @@ console.log(`object = ${objectValue}`);
 
 /////Arrays
 arr.join('element'); //element = some sign to use for joining
-arr.splice(x, y); //x - start index; y - end index (excluded)
 arr.split('|'); arr.split(/regular expression/); //splits by sign or by regex
+
 arr.pop(); let popped = arr.pop(); //removes last element and returns it
-arr.shift(); let shifter = arr.shift();//removes 0 element and returns it
-arr.unshift();//pushes new element to beginning of array and moves rest
-arr.push(<element>); //pushes element to end of array
+arr.shift(); let shifter = arr.shift();//removes first element and returns it
+arr.unshift();//pushes new element to beginning of array
+arr.push(<element>); //pushes new element to end of array
+
+arr.slice(startIndex, endIndex+1); //returns elements between indexes
+arr.splice(starIndex, numOfElements); //deletes numOfelements from startIndex onwards
 
 ////regex
 let regex= /<insert regex here>/g;
@@ -19,13 +22,18 @@ let regex= /<insert regex here>/g;
 //Matrix numbers mapper
 let matrix = input.map(row => row.split(' ').map(Number));
 
+//Matrix printer
+console.log(
+  matrix.map(row => row.join(' '))
+  .join('\n'));
+
+
 //Matrix walker
-for (let row = 0; row < matrix.length; row++) {
-    let cols = matrix[row];
-    for (let col = 0; col < cols.length; col++) {
-        console.log(matrix[row][col]);
+    for (let row = 0; row < input.length; row++){
+        for (let col = 0; col < input[row].length; col++){
+            
+        }
     }
-}
 
 ////Strings
 //Read, Splice, Trim spaces, Remove empty elements
@@ -37,4 +45,3 @@ let text="long text here"; let matched = text.match(/regex/); //matches text by 
 let text ="long text here"; let pattern = new RegExp(/expresion/); pattern.match(text);//matches text by patter and returns first match
 text.replace("string" or /pattern/ to replace, thing to be replaced with);
 text.indexOf("string" or /pattern/);//return array index of matched string or pattern
-

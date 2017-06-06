@@ -1,13 +1,12 @@
-function main(input) {
-    function sorting(astr, bstr) {
-        if (astr.length != bstr.length) {
-            return astr.length - bstr.length;
+function program(input) {
+    input.sort(function (a, b) {
+        if (a.length !== b.length) {
+            return a.length > b.length;
         }
-        return (astr < bstr) ? -1 : (astr > bstr) ? 1 : 0;
-    }
-    input.sort(sorting);
+        return a[0] > b[0];
+    });
     console.log(input.join('\n'));
 }
 
-main(['Deny', 'omen', 'test', 'Default']);
-// main(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']);
+program(['Isaac', 'Theodor', 'Jack', 'Harrison', 'George']);
+program(['test', 'Deny', 'omen', 'Default']);
