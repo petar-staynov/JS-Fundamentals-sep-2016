@@ -35,6 +35,16 @@ console.log(
         }
     }
 
+    //Create matrix
+    let matrix = [];
+    for (let row = 0; row < height; row++) {
+        let rowArr = []; //row array
+        for (let col = 0; col < width; col++) {
+            rowArr.push(0)
+        }
+        matrix.push(rowArr);
+    }
+
 ////Strings
 //Read, Splice, Trim spaces, Remove empty elements
 let elements = obj.splice('|').map(each => each.trim()).filter(each => each != '');

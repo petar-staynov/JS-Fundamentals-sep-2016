@@ -1,43 +1,42 @@
-function main(matrixRows) {
-    let matrix = matrixRows.map(row => row.split(' ').map(Number));
+function program(input) {
+    input = input.map(row => row.split(' ').map(Number));
 
-    //DIAGONAL SUMMATION
+    // console.log(input);
     let sum1 = 0;
     let sum2 = 0;
 
-    let diagonal1 = [];
-    let diagonal2 = [];
-
-    let diagEqual = true;
-    for (let row = 0; row < matrix.length; row++) {
-        sum1 += matrix[row][row];
-        diagonal1.push(matrix[row][row]);
-        sum2 += matrix[row][matrix.length - row - 1];
-        diagonal2.push(matrix[row][matrix.length - row - 1]);
+    for (let row = 0; row < input.length; row++) {
+        sum1 += input[row][row];
+        sum2 += input[row][input.length - row - 1];
     }
-    if (sum1 !== sum2) diagEqual = false;
-    //END//DIAGONAL SUMMATION
 
-    if (diagEqual){
-        var result = [];
-        //FILL RESULT WITH DIAGONAL NUMBER
-        for (let row = 0; row < matrix.length; row++) {
-            result[row] = [];
-            for (let col = 0; col <matrix[row].length; col++) {
-                result[row][col] = sum1;
+    if (sum1 !== sum2) {
+        console.log(
+            input.map(row => row.join(' '))
+                .join('\n'));
+    }
+
+    else {
+        //Fill matrix
+        let matrix = [[]];
+        for (let row = 0; row < input.length; row++) {
+            matrix.push([]);
+            for (let col = 0; col < input[row].length; col++) {
+                matrix[row].push(sum1);
             }
         }
+        matrix.pop();
 
-        //FILL RESILT WITH ORIGINAL DIAGONALS
-        for (let pos = 0; pos < matrix.length; pos++){
-            result[pos][pos] = diagonal1[pos];
-            result[pos][result.length - pos - 1] = diagonal2[pos];
+        //Diagonal filler
+        for (let rowCol = 0; rowCol < input.length; rowCol++) {
+            matrix[rowCol][rowCol] = input[rowCol][rowCol];
+            matrix[rowCol][input.length - rowCol - 1]  = input[rowCol][input.length - rowCol - 1];
         }
-        result.forEach(row => console.log(row.join(' ')));
-    }
 
-    else if (!diagEqual) {
-        matrix.forEach(row => console.log(row.join(' ')));
+        //Matrix printer
+        console.log(
+            matrix.map(row => row.join(' '))
+                .join('\n'));
     }
 }
 // main(['1 1 1',
