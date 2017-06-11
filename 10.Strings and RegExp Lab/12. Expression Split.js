@@ -1,7 +1,12 @@
-function main(input) {
-    let text = input[0];
-    let regex = /[\s.();,]+/;
-    let result = text.split(regex);
-    console.log(result.join('\n'));
+function expressionSplit(input) {
+    let regex = new RegExp(/\s+|,|\.+|\(+|\)+|;+/, 'g');
+    input = input.split(regex);
+
+    input = input.filter(e=>{
+        return e !== '';
+    });
+
+    console.log(input.join('\n'));
 }
-main(['let sum = 4 * 4,b = "wow";']);
+
+expressionSplit('let sum = 1 + 2;if(sum > 2){\tconsole.log(sum);}');

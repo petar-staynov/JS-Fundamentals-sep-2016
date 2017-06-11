@@ -1,11 +1,9 @@
-function main(input) {
-    let text = input[0];
-    let words = input.slice(1); //remove 1st element //these are words to be censored
-
-    for (let word of words){
-        let replace = '-'.repeat(word.length);
-        let regex = new RegExp(word, 'g');
-        text = text.replace(regex, replace); //scans text for 'this' word to censor with replaced,=
+function censorship(text, censorArr) {
+    //censorArr in censorhip censorArr
+    for (let i = 0; i < censorArr.length; i++) {
+        while (text.indexOf(censorArr[i]) > -1) {
+            text = text.replace(censorArr[i], '-'.repeat(censorArr[i].length));
+        }
     }
     console.log(text);
 }

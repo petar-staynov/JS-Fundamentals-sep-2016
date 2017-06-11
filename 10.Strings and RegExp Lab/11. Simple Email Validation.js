@@ -1,8 +1,5 @@
-function main([email]) {
-    let pattern = /\b[A-Za-z\d]+@[a-z]+\.[a-z]+\b/;
-
-    let result = pattern.test(email);
-    if (result) console.log("Valid");
-    else console.log("Invalid");
+function emailMatch(input) {
+    let regex = new RegExp(/^[a-zA-Z0-9]+@[a-z]+\.[a-z]+$/,'g');
+    console.log(regex.test(input) ? 'Valid' : 'Invalid');
 }
 main(['invalid@emai1.bg']);

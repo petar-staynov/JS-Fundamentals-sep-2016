@@ -31,7 +31,7 @@ console.log(
 //Matrix walker
     for (let row = 0; row < input.length; row++){
         for (let col = 0; col < input[row].length; col++){
-            
+            //things
         }
     }
 
@@ -46,6 +46,15 @@ console.log(
     }
 
 ////Strings
+let str =  "I love strings";
+str.indexOf(substring, index)// //Returns start index of substring. If not found returns -1. Searches after <index>
+str.substr(startIndex, length); //creates substring from string
+str.substring(startindex+1, endIndex); //creates substring from string
+str.split(delimiter) //splits by delimiter
+str.replace('substr', str) //replaces substr with str
+str.replace(/substr/g, str) //replaces all substrs with str
+
+
 //Read, Splice, Trim spaces, Remove empty elements
 let elements = obj.splice('|').map(each => each.trim()).filter(each => each != '');
 

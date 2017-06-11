@@ -1,19 +1,18 @@
-function main(text) {
-    let list = [];
+function aggregateTable(input) {
+    let cities = [];
     let sum = 0;
 
-    for (let line of text)
-    {
-        let townData = line.split('|');
-        // console.log(townData);
-        let townName = townData[1].trim();
-        // console.log(townName);
-        list.push(townName);
-        let income = Number(townData[2].trim());
-        // console.log(income);
-        sum += income;
+    for (let line = 0; line < input.length; line++) {
+        input[line] = input[line].split('|');
+        input[line].shift();
+        input[line][0] = input[line][0].trim();
+        input[line][1] = input[line][1].trim();
+
+        cities.push(input[line][0]);
+        sum += Number(input[line][1]);
     }
-    console.log(list.join(', '));
+
+    console.log(cities.join(', '));
     console.log(sum);
 }
 
