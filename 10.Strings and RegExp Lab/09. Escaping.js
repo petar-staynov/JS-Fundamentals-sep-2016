@@ -5,7 +5,7 @@ function main(input) {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
-    }
+    };
     console.log('<ul>')
     for (let element in input){
         // input[element] = input[element].htmlEscape();
